@@ -1,0 +1,32 @@
+---
+- name: Run system monitoring on multiple hosts
+  hosts: servers
+  become: yes
+  tasks:
+    - name: Copy monitoring script to remote host
+      copy:
+        src: ./monitoring.sh
+        dest: /tmp/monitoring.sh
+        mode: '0755'
+
+    - name: Execute monitoring script
+      shell: /tmp/monitoring.sh
+      become: yes
+      environment:
+        LOG_DIR: /home/andi/log_monitoring
+        HOST_IP: "{{ ansible_host }}"   # IP sesuai inventory
+
+    - name: Fetch log file back to control node
+      fetch:
+        src: "/home/andi/log_monitoring/system_monitor_{{ ansible_host }}.log"
+        dest: "./logs/{{ inventory_hostname }}/"
+        flat: yes
+
+# --- Kirim log ke Telegram dari control node ---
+- name: Send all fetched logs to Telegram
+  hosts: localhost
+  tasks:
+    - name: Run Telegram log sender script
+      shell: ./send_log_telegram.sh
+      args:
+        chdir: "{{ playbook_dir }}"

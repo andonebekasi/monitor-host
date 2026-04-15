@@ -1,0 +1,77 @@
+===============================================================
+                  SYSTEM RESOURCE CHECK                        
+Host IP: 192.168.1.10
+Date: 2026-04-15 07:25:16
+===============================================================
+
+>>> Overall CPU & Memory Usage:
+CPU Usage    : 9.1 %
+Memory Usage : 3.30 %
+Swap Usage   : 0.00 %
+
+>>> Top 10 processes by CPU usage:
+PID      PPID     COMMAND                                  %MEM     %CPU    
+25736    25735    /usr/bin/python3.12                      /home/a  0.1 42.2
+25587    25489    sshd:                                    andi@pts/0 0.0  1.5
+25489    1306     sshd:                                    andi     [priv]            0.0  0.5
+22290    2        [kworker/0:1-events]                     0.0      0.0     
+23580    2        [kworker/u2:4-events_power_              0.0      0.0     
+2776     1        ./frpc                                   -c       ./frpc.ini         0.0  0.0
+24918    2        [kworker/u2:1-events_power_              0.0      0.0     
+25174    2        [kworker/u2:0-writeback]                 0.0      0.0     
+370      1        /sbin/multipathd                         -d       -s       0.1  0.0
+24593    1        /usr/lib/polkit-1/polkitd                -        0.0  0.0
+
+>>> Top 10 processes by Memory usage:
+PID      PPID     COMMAND                                  %MEM     %CPU    
+318      1        /usr/lib/systemd/systemd-jo              0.1      0.0     
+25736    25735    /usr/bin/python3.12                      /home/a  0.1 41.3
+370      1        /sbin/multipathd                         -d       -s       0.1  0.0
+947      1        /usr/bin/python3                         /usr/share 0.1  0.0
+2776     1        ./frpc                                   -c       ./frpc.ini         0.0  0.0
+1        0        /sbin/init                               0.0      0.0     
+24652    1        /usr/libexec/udisks2/udisks              0.0      0.0     
+619      1        /usr/lib/systemd/systemd-re              0.0      0.0     
+24606    1        /usr/sbin/ModemManager                   0.0      0.0     
+1797     1        /usr/lib/systemd/systemd                 --       0.0  0.0
+
+>>> Disk Usage per Partition:
+Filesystem           Type     Size       Used       Avail      Use%     Mount               
+tmpfs                tmpfs    1.6G       1.1M       1.6G       1%       /run                
+/dev/mapper/ubuntu--vg-ubuntu--lv ext4     490G       6.7G       463G       2%       /                   
+tmpfs                tmpfs    7.7G       0          7.7G       0%       /dev/shm            
+tmpfs                tmpfs    5.0M       0          5.0M       0%       /run/lock           
+/dev/sda2            ext4     2.0G       104M       1.7G       6%       /boot               
+tmpfs                tmpfs    1.6G       12K        1.6G       1%       /run/user/1000      
+
+Docker not installed or not running.
+
+>>> Top 5 services by Memory:
+MEM%     SERVICE             
+0.1      unattended-upgr     
+0.1      systemd-journal     
+0.1      python3.12          
+0.1      multipathd          
+0        watchdogd           
+
+>>> Top 5 services by CPU:
+CPU%     SERVICE             
+39.5     python3.12          
+2        sshd                
+0        watchdogd           
+0        upowerd             
+0        unattended-upgr     
+
+>>> Top 10 largest log files in /var/log:
+SIZE       FILE                                              
+17M        /var/log/journal/3d68c71da8f840208988e31d7a897bd0/system.journal
+8.0M       /var/log/journal/3d68c71da8f840208988e31d7a897bd0/user-1001.journal
+8.0M       /var/log/journal/3d68c71da8f840208988e31d7a897bd0/user-1000.journal
+720K       /var/log/dpkg.log                                 
+596K       /var/log/installer/installer-journal.txt          
+584K       /var/log/syslog.1                                 
+500K       /var/log/syslog                                   
+368K       /var/log/sysstat/sar14                            
+368K       /var/log/sysstat/sar13                            
+368K       /var/log/sysstat/sar12                            
+===============================================================

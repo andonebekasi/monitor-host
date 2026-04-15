@@ -1,0 +1,84 @@
+===============================================================
+                  SYSTEM RESOURCE CHECK                        
+Host IP: 192.168.1.11
+Date: 2026-04-15 07:25:16
+===============================================================
+
+>>> Overall CPU & Memory Usage:
+CPU Usage    : 5.9 %
+Memory Usage : 11.26 %
+Swap Usage   : 0.00 %
+
+>>> Top 10 processes by CPU usage:
+PID      PPID     COMMAND                                  %MEM     %CPU    
+39526    39525    /usr/bin/python3.12                      /home/a  0.3 44.4
+39244    1        /usr/lib/systemd/systemd                 --       0.1  2.5
+39353    39240    sshd:                                    andi@pts/0 0.1  1.9
+39240    13434    sshd:                                    andi     [priv]            0.1  0.7
+26850    26778    grafana                                  server   --homepath=/  3.4  0.5
+26856    26790    /bin/prometheus                          --config.fi 1.7  0.2
+26858    26783    /bin/node_exporter                       0.2      0.1     
+3398     1        /usr/bin/containerd                      0.6      0.0     
+4308     1        /usr/bin/dockerd                         -H       fd:// -  1.2  0.0
+39233    2        [kworker/u6:0-writeback]                 0.0      0.0     
+
+>>> Top 10 processes by Memory usage:
+PID      PPID     COMMAND                                  %MEM     %CPU    
+26850    26778    grafana                                  server   --homepath=/  3.4  0.5
+26856    26790    /bin/prometheus                          --config.fi 1.7  0.2
+4308     1        /usr/bin/dockerd                         -H       fd:// -  1.2  0.0
+13442    1        /usr/lib/systemd/systemd-jo              0.7      0.0     
+3398     1        /usr/bin/containerd                      0.6      0.0     
+39526    39525    /usr/bin/python3.12                      /home/a  0.3 43.4
+394      1        /sbin/multipathd                         -d       -s       0.3  0.0
+26858    26783    /bin/node_exporter                       0.2      0.1     
+993      1        /usr/bin/python3                         /usr/share 0.2  0.0
+13445    1        /usr/libexec/udisks2/udisks              0.1      0.0     
+
+>>> Disk Usage per Partition:
+Filesystem           Type     Size       Used       Avail      Use%     Mount               
+tmpfs                tmpfs    778M       1.4M       777M       1%       /run                
+/dev/mapper/ubuntu--vg-ubuntu--lv ext4     62G        9.5G       49G        17%      /                   
+tmpfs                tmpfs    3.8G       0          3.8G       0%       /dev/shm            
+tmpfs                tmpfs    5.0M       0          5.0M       0%       /run/lock           
+/dev/sda2            ext4     2.0G       104M       1.7G       6%       /boot               
+overlay              overlay  62G        9.5G       49G        17%      /var/lib/docker/rootfs/overlayfs/b4e34c742b6ec723f8c81619e25c26c1ffceb6f33549326fc18342f1697a698e
+overlay              overlay  62G        9.5G       49G        17%      /var/lib/docker/rootfs/overlayfs/aca4ce9dfba03f5a9de3d4a0d05f7ed32ff09d3fbb133b4a2a589ca3423c333d
+overlay              overlay  62G        9.5G       49G        17%      /var/lib/docker/rootfs/overlayfs/b908d52efffe0455e740991abe1592b00e8175e2b735e304f89b9baae6b5cbb9
+tmpfs                tmpfs    778M       12K        778M       1%       /run/user/1000      
+
+>>> Docker Running Containers and Uptime:
+CONTAINER            STATUS       UPTIME       IMAGE               
+prometheus           Up                        2 days prom/prometheus:latest
+grafana              Up                        2 days grafana/grafana:latest
+node-exporter        Up                        2 days prom/node-exporter:latest
+
+>>> Top 5 services by Memory:
+MEM%     SERVICE             
+3.4      grafana             
+1.7      prometheus          
+1.2      dockerd             
+0.7      systemd-journal     
+0.7      containerd          
+
+>>> Top 5 services by CPU:
+CPU%     SERVICE             
+37.7     python3.12          
+2.5      sshd                
+2.4      systemd             
+0.5      grafana             
+0.2      prometheus          
+
+>>> Top 10 largest log files in /var/log:
+SIZE       FILE                                              
+33M        /var/log/journal/e2d58d9e093947c99b74a1edf35a6dbc/system.journal
+8.1M       /var/log/journal/e2d58d9e093947c99b74a1edf35a6dbc/user-1000.journal
+6.4M       /var/log/syslog.1                                 
+5.7M       /var/log/kern.log.1                               
+5.6M       /var/log/ufw.log.1                                
+4.2M       /var/log/syslog                                   
+3.6M       /var/log/ufw.log                                  
+3.6M       /var/log/kern.log                                 
+728K       /var/log/dpkg.log                                 
+608K       /var/log/sysstat/sar14                            
+===============================================================

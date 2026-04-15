@@ -1,0 +1,25 @@
+ansible-playbook -i hosts run_monitoring.yml --ask-become-pass
+ansible all -i hosts -m ping --ask-become-pass
+
+ - Cek crontab
+   crontab -l
+   Jika ingin lihat cron user lain (misal root):
+   sudo crontab -l -u andi
+   sudo crontab -l -u root
+
+-  Cek semua cron jobs sistem
+   Cron sistem biasanya di folder /etc/cron.*:
+   ls /etc/cron.hourly
+   ls /etc/cron.daily
+   ls /etc/cron.d
+
+   cron.d → bisa ada file yang berisi job tambahan
+
+- Cek apakah cron service aktif
+  systemctl status cron
+
+
+Gunakan crontab -e untuk edit cron jobs
+Gunakan crontab -l untuk cek daftar cron jobs
+Jangan lupa redirect output ke log file agar bisa debug:
+>> /home/andi/tempt3/ansible_cron.log 2>&1
